@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+chrome: //vivaldi-webui/startpage?section=Speed-dials&activeSpeedDialIndex=0&background-color=#2e3a50
 import 'package:audioplayers/audio_cache.dart';
 
 void main() => runApp(XylophoneApp());
@@ -30,15 +32,14 @@ class XylophoneApp extends StatelessWidget {
   }
 
   Expanded buildButton(
-      {@required int soundNumber, @required MaterialColor color}) {
-    return Expanded(
-      flex: 1,
-      child: FlatButton(
-        color: color,
-        onPressed: () {
-          player.play('note$soundNumber.wav');
-        },
-      ),
-    );
-  }
+      {@required int soundNumber, @required MaterialColor color}) =>
+      Expanded(
+        flex: 1,
+        child: FlatButton(
+          color: color,
+          onPressed: () {
+            player.play('note$soundNumber.wav');
+          },
+        ),
+      );
 }
